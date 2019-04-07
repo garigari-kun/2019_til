@@ -1,0 +1,9 @@
+version: '3'
+services:
+  jupyterlab:
+    build: .
+    ports:
+      - '8888:8888'
+    volumes:  # カレントディレクトリの/notebooks以下をマウント
+      - "./notebooks:/home/student/notebooks"
+    command: start.sh jupyter lab
